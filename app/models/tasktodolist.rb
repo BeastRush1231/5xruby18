@@ -1,0 +1,2 @@
+class Tasktodolist < ApplicationRecord
+end
