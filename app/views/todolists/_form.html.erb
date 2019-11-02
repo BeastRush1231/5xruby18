@@ -1,0 +1,11 @@
+<%= form_for(@todolist) do |t| %>
+  <%= t.label :name, "姓名" %>
+  <%= t.text_field :name %> <br/>
+
+  <%= t.label :content, "內容" %>
+  <%= t.text_area :content %>
+
+  <%= t.submit %>
+<% end %>
+
+<%= link_to "首頁", todolists_path %>
