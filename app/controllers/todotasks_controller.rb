@@ -30,7 +30,7 @@ class TodotasksController < ApplicationController
   end
 
   def destroy
-    @todotask.destroy if @todotask
+    @todotask.destroy
     redirect_to todotasks_path, notice: "刪除任務成功!"
   end
 
