@@ -1,0 +1,2 @@
+class Todotask < ApplicationRecord
+end

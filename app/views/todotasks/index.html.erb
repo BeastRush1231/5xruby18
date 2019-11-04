@@ -1,6 +1,6 @@
 <h1>任務清單列表</h1>
 
-<%= link_to "新增任務", new_todolist_path %>
+<%= link_to "新增任務", new_todotask_path %>
 
 <table>
   <thead>
@@ -10,13 +10,13 @@
     </tr>
   </thead>
   <tbody>
-    <% @todolist.each do |t| %>
+    <% @todotask.each do |t| %>
     <tr>
       <td> <%= t.name %> </td>
       <td> <%= t.content %> </td>
       <td>
-        <%= link_to "修改", edit_todolist_path(t) %>
-        <%= link_to "刪除", todolist_path(t), method: 'delete', data: {confirm: "確認刪除"} %>
+        <%= link_to "修改", edit_todotask_path(t) %>
+        <%= link_to "刪除", todotask_path(t), method: 'delete', data: {confirm: "確認刪除"} %>
       </td>
     </tr>
     <% end %>
