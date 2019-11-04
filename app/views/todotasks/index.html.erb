@@ -1,0 +1,24 @@
+<h1>任務清單列表</h1>
+
+<%= link_to "新增任務", new_todotask_path %>
+
+<table>
+  <thead>
+    <tr>
+      <td>任務名稱</td>
+      <td>任務內容</td>
+    </tr>
+  </thead>
+  <tbody>
+    <% @todotask.each do |t| %>
+    <tr>
+      <td> <%= t.name %> </td>
+      <td> <%= t.content %> </td>
+      <td>
+        <%= link_to "修改", edit_todotask_path(t) %>
+        <%= link_to "刪除", todotask_path(t), method: 'delete', data: {confirm: "確認刪除"} %>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
