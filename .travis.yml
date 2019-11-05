@@ -8,6 +8,6 @@ env:
 before_script:
   - psql -c 'create database test18_test;' -U postgres
 script:
-  - bundle exec rake db:setup
+  - RAILS_ENV=test bundle exec rake db:setup
   - RAILS_ENV=test bundle exec rake db:migrate
-  - bundle exec rake spec 
+  - RAILS_ENV=test bundle exec rspec 
