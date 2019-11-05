@@ -12,7 +12,7 @@ class TodotasksController < ApplicationController
   def create
     @todotask = Todotask.new(todotask_params)
     if @todotask.save
-      redirect_to todotasks_path, notice: "新增任務成功"
+      redirect_to todotasks_path, notice: t('.notice')
     else
       render :new
     end
@@ -23,7 +23,7 @@ class TodotasksController < ApplicationController
 
   def update
     if @todotask.update(todotask_params)
-      redirect_to todotasks_path, notice: "更新任務成功!"
+      redirect_to todotasks_path, notice: t('.notice')
     else
       render :edit
     end
@@ -31,7 +31,7 @@ class TodotasksController < ApplicationController
 
   def destroy
     @todotask.destroy
-    redirect_to todotasks_path, notice: "刪除任務成功!"
+    redirect_to todotasks_path, notice: t('.notice')
   end
 
   private
