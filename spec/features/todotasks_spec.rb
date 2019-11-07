@@ -8,7 +8,7 @@ RSpec.feature "Todotasks", type: :feature do
     click_on "新增任務"
     fill_in('標題', with: "todotasks' name")
     fill_in('內容', with: "content")
-    click_on "Create Todotask"
+    click_on "送出"
 
     expect(page).to have_content "todotasks' name"
     expect(page).to have_content "content"
