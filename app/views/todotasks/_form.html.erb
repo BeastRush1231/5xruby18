@@ -1,9 +1,19 @@
+<% if @todotask.errors.present? %>
+  <ul>
+    <% @todotask.errors.each do |error, message| %>
+      <li>
+        <%= "#{error.capitalize} "+ t('todotasks.validate.error') + " #{message}" %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
 <%= form_for(@todotask) do |t| %>
   <%= t.label :name, t('views.todotasks.title') %>
-  <%= t.text_field :name %> <br/>
+  <%= t.text_field :name, placeholder: t('todotasks.validate.placeholder') %> <br/>
 
   <%= t.label :content, t('views.todotasks.content') %>
-  <%= t.text_area :content %>
+  <%= t.text_area :content, placeholder: t('todotasks.validate.placeholder') %>
 
   <%= t.submit t('views.submit_btn') %>
 <% end %>

@@ -6,18 +6,6 @@ RSpec.feature "Todotasks", type: :feature do
     FactoryBot.create(:user)
   end
 
-  scenario "任務列表以建立時間排序" do
-    FactoryBot.create(:todotask, name: "todotasks1")
-    FactoryBot.create(:todotask, name: "todotasks2")
-    visit root_path
-    within 'tbody tr:nth-child(1)' do
-      expect(page).to have_content("todotasks2")
-    end
-    within 'tbody tr:nth-child(2)' do
-      expect(page).to have_content("todotasks1")
-    end
-  end
-
   scenario "建立新的任務" do
     visit root_path
     click_on "新增任務"
