@@ -2,7 +2,7 @@ class TodotasksController < ApplicationController
   before_action :find_todotask, only: [:edit, :update, :destroy]
   
   def index
-    @todotask = Todotask.all
+    @todotask = Todotask.order(created_at: :desc)
   end
 
   def new
