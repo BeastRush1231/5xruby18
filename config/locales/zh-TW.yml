@@ -1,0 +1,22 @@
+zh-TW:
+  views:
+    edit_todotask: "編輯任務"
+    new_todotask: "新增任務"
+    # show_todotask: "任務內容"
+    todotasks_topic: "任務清單列表"
+    home: "首頁"
+    submit_btn: "送出"
+    todotasks:
+      title: "標題"
+      content: "內容"
+      edit: "編輯"
+      # show: "查看"
+      delete: "刪除"
+      delete_msg: "你確定要刪除任務？"
+  todotasks:
+    create:
+      notice: "新增任務成功"
+    update:
+      notice: "編輯任務成功"
+    destroy:
+      notice: "刪除成功"

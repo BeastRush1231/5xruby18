@@ -1,11 +1,11 @@
 <%= form_for(@todotask) do |t| %>
-  <%= t.label :name, "姓名" %>
+  <%= t.label :name, t('views.todotasks.title') %>
   <%= t.text_field :name %> <br/>
 
-  <%= t.label :content, "內容" %>
+  <%= t.label :content, t('views.todotasks.content') %>
   <%= t.text_area :content %>
 
-  <%= t.submit %>
+  <%= t.submit t('views.submit_btn') %>
 <% end %>
 
-<%= link_to "首頁", todotasks_path %>
+<%= link_to t('views.home'), todotasks_path %>

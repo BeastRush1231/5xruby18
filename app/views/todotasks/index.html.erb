@@ -1,12 +1,12 @@
-<h1>任務清單列表</h1>
+<h1> <%= t('views.todotasks_topic') %> </h1>
 
-<%= link_to "新增任務", new_todotask_path %>
+<%= link_to t('views.new_todotask'), new_todotask_path %>
 
 <table>
   <thead>
     <tr>
-      <td>任務名稱</td>
-      <td>任務內容</td>
+      <td> <%= t('views.todotasks.title') %> </td>
+      <td> <%= t('views.todotasks.content') %> </td>
     </tr>
   </thead>
   <tbody>
@@ -15,10 +15,13 @@
       <td> <%= t.name %> </td>
       <td> <%= t.content %> </td>
       <td>
-        <%= link_to "修改", edit_todotask_path(t) %>
-        <%= link_to "刪除", todotask_path(t), method: 'delete', data: {confirm: "確認刪除"} %>
+        <%= link_to t('views.todotasks.edit'), edit_todotask_path(t) %>
+        <%= link_to t('views.todotasks.delete'), todotask_path(t), method: 'delete', data: {confirm: t('views.todotasks.delete_msg') } %>
       </td>
     </tr>
     <% end %>
   </tbody>
 </table>
+
+<%= link_to "中文版", :controller => controller_name, :action => action_name, :locale => "zh-TW" %>
+<%= link_to "English", :controller => controller_name, :action => action_name, :locale => "en" %>
