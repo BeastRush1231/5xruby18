@@ -19,4 +19,4 @@ zh-TW:
     update:
       notice: "編輯任務成功"
     destroy:
-      notice: "刪除成功"
+      notice: "刪除任務成功"
