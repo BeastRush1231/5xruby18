@@ -12,6 +12,7 @@ en:
       edit: "Edit"
       starttime: "TaskStarttime"
       endtime: "TaskEndtime"
+      status: "status"
       # show: "Show"
       delete: "Delete"
       delete_msg: "Are you sure delete this todotask？"
