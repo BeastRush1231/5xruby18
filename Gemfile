@@ -47,6 +47,7 @@ group :development, :test do
   gem 'faker', '~> 2.7'
   gem 'shoulda-matchers', '~> 4.1', '>= 4.1.2'
   gem 'figaro', '~> 1.1', '>= 1.1.1'
+  gem 'aasm', '~> 5.0', '>= 5.0.6'
 end
 
 group :development do
