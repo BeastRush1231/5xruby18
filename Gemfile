@@ -48,6 +48,7 @@ group :development, :test do
   gem 'shoulda-matchers', '~> 4.1', '>= 4.1.2'
   gem 'figaro', '~> 1.1', '>= 1.1.1'
   gem 'aasm', '~> 5.0', '>= 5.0.6'
+  gem 'ransack', '~> 2.3'
 end
 
 group :development do
