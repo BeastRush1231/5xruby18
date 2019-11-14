@@ -1,24 +1,33 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+- 推上 Heroku
 
-Things you may want to cover:
+  - 申請 Heroku 帳號
 
-* Ruby version
+    目前申請 Heroku 帳號是免費的，只要填寫一些簡單的基本資料即可申請。
 
-* System dependencies
+  - 安裝 Heroku Cli
 
-* Configuration
+  - 終端機登入 Heroku
 
-* Database creation
+    ```
+    $ heroku login
+    Enter your Heroku credentials.
+    Email: xxx@xxx.com.tw
+    Password (typing will be hidden):
+    Logged in as xxx@xxx.com.tw
+    ```
 
-* Database initialization
+  - 部署伺服器
 
-* How to run the test suite
+    ```
+    $ heroku create
+    ```
 
-* Services (job queues, cache servers, search engines, etc.)
+  - 推向 Heroku
 
-* Deployment instructions
+    ```
+    $ git push heroku master
+    ```
 
-* ...
+  - 網址連結：[https://evening-crag-84071.herokuapp.com](https://evening-crag-84071.herokuapp.com/)
