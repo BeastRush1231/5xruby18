@@ -20,3 +20,6 @@ en:
       notice: "TodoTask Updated！"
     destroy:
       notice: "TodoTask Removed！"
+    validate:
+      error: "Column"
+      placeholder: "Can't be blank"
