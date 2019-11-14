@@ -2,4 +2,15 @@
 
 require_relative 'config/environment'
 
+USERS = {
+  'username' => 'password'
+}
+use(DigestAuth, {
+  realm: 'MyApp',
+  opaque: 'secret',
+  passwords_hashed: true
+}) do |user|
+  USERS[user]
+end
+
 run Rails.application
