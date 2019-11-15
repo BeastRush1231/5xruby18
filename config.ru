@@ -5,7 +5,7 @@ require_relative 'config/environment'
 USERS = {
   'username' => 'password'
 }
-use(DigestAuth, {
+use(Rack::Auth::Digest, {
   realm: 'MyApp',
   opaque: 'secret',
   passwords_hashed: true
