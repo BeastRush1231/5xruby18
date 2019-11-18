@@ -1,6 +1,6 @@
 class TodotasksController < ApplicationController
   before_action :find_todotask, only: [:edit, :update, :destroy]
-  http_basic_authenticate_with name: "5xruby", password: "secret"
+  http_basic_authenticate_with name: "user", password: "secret" if Rails.env.production?
 
   def index
     @todotask = Todotask.order(created_at: :desc)
