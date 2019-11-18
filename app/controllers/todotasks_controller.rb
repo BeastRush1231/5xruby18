@@ -1,6 +1,6 @@
 class TodotasksController < ApplicationController
   before_action :find_todotask, only: [:edit, :update, :destroy]
-  http_basic_authenticate_with name: "5xruby", password: "secret", except: [:index, :new, :create, :edit, :update, :destroy]
+  http_basic_authenticate_with name: "5xruby", password: "secret"
 
   def index
     @todotask = Todotask.order(created_at: :desc)
