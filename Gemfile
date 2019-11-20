@@ -49,6 +49,7 @@ group :development, :test do
   gem 'figaro', '~> 1.1', '>= 1.1.1'
   gem 'aasm', '~> 5.0', '>= 5.0.6'
   gem 'ransack', '~> 2.3'
+  gem 'hirb-unicode', '~> 0.0.5'
 end
 
 group :development do
