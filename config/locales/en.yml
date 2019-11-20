@@ -10,6 +10,8 @@ en:
       title: "Title"
       content: "Content"
       edit: "Edit"
+      starttime: "TaskStarttime"
+      endtime: "TaskEndtime"
       # show: "Show"
       delete: "Delete"
       delete_msg: "Are you sure delete this todotask？"

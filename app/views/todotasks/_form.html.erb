@@ -14,6 +14,14 @@
 
   <%= t.label :content, t('views.todotasks.content') %>
   <%= t.text_area :content, placeholder: t('todotasks.validate.placeholder') %>
+  <br/>
+
+  <%= t.label :start_time, t('views.todotasks.starttime') %>
+  <%= t.datetime_field :start_time, placeholder: t('todotasks.validate.placeholder') %>
+  <br/>
+
+  <%= t.label :end_time, t('views.todotasks.endtime') %>
+  <%= t.datetime_field :end_time, placeholder: t('todotasks.validate.placeholder') %>
 
   <%= t.submit t('views.submit_btn') %>
 <% end %>

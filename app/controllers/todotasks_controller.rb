@@ -2,7 +2,8 @@ class TodotasksController < ApplicationController
   before_action :find_todotask, only: [:edit, :update, :destroy]
 
   def index
-    @todotask = Todotask.order(created_at: :desc)
+    @todotask = Todotask.order_by_end_time
+    # @todotask = Todotask.order(end_time: :asc)
   end
 
   def new
@@ -41,6 +42,6 @@ class TodotasksController < ApplicationController
   end
   
   def todotask_params
-    params.require(:todotask).permit(:name, :content)
+    params.require(:todotask).permit(:name, :content, :start_time, :end_time)
   end
 end

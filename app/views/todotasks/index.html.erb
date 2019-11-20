@@ -7,6 +7,8 @@
     <tr>
       <td> <%= t('views.todotasks.title') %> </td>
       <td> <%= t('views.todotasks.content') %> </td>
+      <td> <%= t('views.todotasks.starttime') %> </td>
+      <td> <%= t('views.todotasks.endtime') %> </td>
     </tr>
   </thead>
   <tbody>
@@ -14,6 +16,8 @@
     <tr>
       <td> <%= t.name %> </td>
       <td> <%= t.content %> </td>
+      <td> <%= (t.start_time)&.strftime('%F %R') %> </td>
+      <td> <%= (t.end_time)&.strftime('%F %R') %> </td>
       <td>
         <%= link_to t('views.todotasks.edit'), edit_todotask_path(t) %>
         <%= link_to t('views.todotasks.delete'), todotask_path(t), method: 'delete', data: {confirm: t('views.todotasks.delete_msg') } %>
