@@ -46,6 +46,7 @@ group :development, :test do
   gem 'factory_bot_rails', '~> 5.1', '>= 5.1.1'
   gem 'faker', '~> 2.7'
   gem 'shoulda-matchers', '~> 4.1', '>= 4.1.2'
+  gem 'figaro', '~> 1.1', '>= 1.1.1'
 end
 
 group :development do

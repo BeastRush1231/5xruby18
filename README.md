@@ -1,24 +1,46 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Requirements
 
-Things you may want to cover:
+- Ruby version 2.6.0
+- Rails version 5.2.3
+- PostgreSQL 11.3
 
-* Ruby version
+- 推上 Heroku
 
-* System dependencies
+- 申請 Heroku 帳號
 
-* Configuration
+目前申請 Heroku 帳號是免費的，只要填寫一些簡單的基本資料即可申請。
 
-* Database creation
+- 安裝 Heroku Cli
 
-* Database initialization
+- 終端機登入 Heroku
 
-* How to run the test suite
+```
+$ heroku login
+Enter your Heroku credentials.
+Email: xxx@xxx.com.tw
+Password (typing will be hidden):
+Logged in as xxx@xxx.com.tw
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+- 部署伺服器
 
-* Deployment instructions
+```
+$ heroku create
+```
 
-* ...
+- 推向 Heroku
+
+```
+$ git push heroku master
+```
+
+- Bundle + Migration
+
+```
+$ heroku run bundle
+$ heroku run rails db:migrate
+```
+
+- 網址連結：[https://evening-crag-84071.herokuapp.com](https://evening-crag-84071.herokuapp.com/)
