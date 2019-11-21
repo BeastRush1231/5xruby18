@@ -8,7 +8,7 @@
   </ul>
 <% end %>
 
-<%= form_for(@todotask) do |t| %>
+<%= search_form_for @q do |t| %>
   <%= t.label :name, t('views.todotasks.title') %>
   <%= t.text_field :name, placeholder: t('todotasks.validate.placeholder') %> <br/>
 

@@ -1,6 +1,19 @@
 <h1> <%= t('views.todotasks_topic') %> </h1>
 
-<%= link_to t('views.new_todotask'), new_todotask_path %>
+<%= link_to t('views.home'), root_path %>
+
+<%= search_form_for @q do |f| %>
+  <%= f.label :name %>
+  <%= f.search_field :name_cont %>
+
+  <%= f.label :status %>
+  <%= byebug %>
+  <%= f.select :status_eq,
+      Todotask.statuses.map { |status| [status[0], status[1]] } 
+  %>
+
+  <%= f.submit %>
+<% end %>
 
 <table>
   <thead>
