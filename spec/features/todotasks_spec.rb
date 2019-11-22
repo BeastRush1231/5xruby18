@@ -40,7 +40,7 @@ RSpec.feature "Todotasks", type: :feature do
   end
 
   scenario "任務列表以結束時間(end_time)排序" do
-    FactoryBot.create(:todotask, name: "todotasks1")
+    FactoryBot.create(:todotask, name: "todotasks1", end_time: "2019-10-26 20:18:18 +0800")
     FactoryBot.create(:todotask, name: "todotasks2", end_time: "2019-10-26 19:18:18 +0800")
     visit root_path
     within 'tbody tr:nth-child(1)' do
