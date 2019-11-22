@@ -6,6 +6,8 @@ en:
     todotasks_topic: "Todotasks List"
     home: "Home"
     submit_btn: "submit"
+    search_name: "Name"
+    search_status: "Status"
     todotasks:
       title: "Title"
       content: "Content"

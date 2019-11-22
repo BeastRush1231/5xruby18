@@ -3,11 +3,10 @@
 <%= link_to t('views.home'), root_path %>
 
 <%= search_form_for @q do |f| %>
-  <%= f.label :name %>
+  <%= f.label :name, t('views.search_name') %>
   <%= f.search_field :name_cont %>
 
-  <%= f.label :status %>
-  <%= byebug %>
+  <%= f.label :status, t('views.search_status') %>
   <%= f.select :status_eq,
       Todotask.statuses.map { |status| [status[0], status[1]] } 
   %>

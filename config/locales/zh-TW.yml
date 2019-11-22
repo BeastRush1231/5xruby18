@@ -6,6 +6,8 @@ zh-TW:
     todotasks_topic: "任務清單列表"
     home: "首頁"
     submit_btn: "送出"
+    search_name: "標題"
+    search_status: "狀態"
     todotasks:
       title: "標題"
       content: "內容"
