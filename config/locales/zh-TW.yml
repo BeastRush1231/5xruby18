@@ -15,6 +15,7 @@ zh-TW:
       endtime: "任務結束時間"
       edit: "編輯"
       status: "狀態"
+      prioirty: "優先順序"
       # show: "查看"
       delete: "刪除"
       delete_msg: "你確定要刪除任務？"

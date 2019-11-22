@@ -23,6 +23,7 @@
       <td> <%= t('views.todotasks.starttime') %> </td>
       <td> <%= t('views.todotasks.endtime') %> </td>
       <td> <%= t('views.todotasks.status') %> </td>
+      <td> <%= t('views.todotasks.prioirty') %> </td>
     </tr>
   </thead>
   <tbody>
@@ -33,6 +34,7 @@
       <td> <%= (t.start_time)&.strftime('%F %R') %> </td>
       <td> <%= (t.end_time)&.strftime('%F %R') %> </td>
       <td> <%= t.status %> </td>
+      <td> <%= t.prioirty %></td>
       <td>
         <%= link_to t('views.todotasks.edit'), edit_todotask_path(t) %>
         <%= link_to t('views.todotasks.delete'), todotask_path(t), method: 'delete', data: {confirm: t('views.todotasks.delete_msg') } %>

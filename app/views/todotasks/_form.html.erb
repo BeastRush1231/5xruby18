@@ -26,6 +26,10 @@
 
   <%= t.label :end_time, t('views.todotasks.endtime') %>
   <%= t.datetime_field :end_time, placeholder: t('todotasks.validate.placeholder') %>
+  <br/>
+
+  <%= t.label :prioirty, t('views.todotasks.prioirty') %>
+  <%= t.select :prioirty, options_for_select([['low', 'low'], ['basic', 'basic'], ['high', 'high']]) %>
 
   <%= t.submit t('views.submit_btn') %>
 <% end %>

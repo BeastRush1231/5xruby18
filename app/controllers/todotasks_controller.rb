@@ -48,6 +48,6 @@ class TodotasksController < ApplicationController
   end
   
   def todotask_params
-    params.require(:todotask).permit(:name, :content, :start_time, :end_time, :status)
+    params.require(:todotask).permit(:name, :content, :start_time, :end_time, :status, :prioirty)
   end
 end
