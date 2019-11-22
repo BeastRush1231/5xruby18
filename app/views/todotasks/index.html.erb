@@ -1,6 +1,7 @@
 <h1> <%= t('views.todotasks_topic') %> </h1>
 
 <%= link_to t('views.home'), root_path %>
+<%= link_to t('views.new_todotask'), new_todotask_path %>
 
 <%= search_form_for @q do |f| %>
   <%= f.label :name, t('views.search_name') %>
