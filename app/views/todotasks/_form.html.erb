@@ -17,7 +17,13 @@
   <br/>
 
   <%= t.label :status, t('views.todotasks.status') %>
-  <%= t.select :status, options_for_select([['upcoming', 'upcoming'], ['processing', 'processing'], ['solved', 'solved']]) %>
+  <%= t.select :status, options_for_select(
+    [
+     [t('views.status_schedule.upcoming'), 'upcoming'],
+     [t('views.status_schedule.processing'), 'processing'],
+     [t('views.status_schedule.solved'), 'solved']
+    ], :selected => t.object.status)
+  %>
   <br/>
 
   <%= t.label :start_time, t('views.todotasks.starttime') %>
@@ -29,7 +35,13 @@
   <br/>
 
   <%= t.label :prioirty, t('views.todotasks.prioirty') %>
-  <%= t.select :prioirty, options_for_select([['low', 'low'], ['basic', 'basic'], ['high', 'high']]) %>
+  <%= t.select :prioirty, options_for_select(
+    [
+     [t('views.priority_lv.low'), 'low'],
+     [t('views.priority_lv.basic'), 'basic'],
+     [t('views.priority_lv.high'), 'high']
+    ], :selected => t.object.prioirty)
+  %>
 
   <%= t.submit t('views.submit_btn') %>
 <% end %>

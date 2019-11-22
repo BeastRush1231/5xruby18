@@ -19,6 +19,14 @@ zh-TW:
       # show: "查看"
       delete: "刪除"
       delete_msg: "你確定要刪除任務？"
+    status_schedule: 
+      upcoming: "待處理"
+      processing: "進行中"
+      solved: "完成"
+    priority_lv: 
+      low: "低"
+      basic: "中"
+      high: "高"
   todotasks:
     create:
       notice: "新增任務成功"

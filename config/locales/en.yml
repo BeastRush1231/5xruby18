@@ -19,6 +19,14 @@ en:
       # show: "Show"
       delete: "Delete"
       delete_msg: "Are you sure delete this todotask？"
+    status_schedule: 
+      upcoming: "upcoming"
+      processing: "processing"
+      solved: "solved"
+    priority_lv: 
+      low: "low"
+      basic: "basic"
+      high: "high"
   todotasks:
     create:
       notice: "Create a new todotask！"
