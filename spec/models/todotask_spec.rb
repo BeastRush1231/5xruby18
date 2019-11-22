@@ -28,4 +28,20 @@ RSpec.describe Todotask, type: :model do
     it { should validate_presence_of(:content) }
     it { should belong_to(:user) }
   end
+
+  describe "建立 Todotask 預設狀態為 upcoming" do 
+    it "Todotask 預設 status" do 
+      todotask = Todotask.create(name: "todotask_status1")
+      expect(todotask.status).to eq "upcoming"
+    end
+  end
+  
+  describe "編輯 Todotask 狀態改為 solved" do 
+    it "Todotask 編輯 status" do 
+      todotask = Todotask.create(name: "todotask_status2")
+      todotask.update(status: "solved")
+      expect(todotask.status).to eq "solved"
+    end
+  end
+
 end 
