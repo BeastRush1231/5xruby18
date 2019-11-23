@@ -18,10 +18,14 @@
     <tr>
       <td> <%= t('views.todotasks.title') %> </td>
       <td> <%= t('views.todotasks.content') %> </td>
-      <td> <%= t('views.todotasks.starttime') %> </td>
-      <td> <%= t('views.todotasks.endtime') %> </td>
-      <td> <%= t('views.todotasks.status') %> </td>
-      <td> <%= t('views.todotasks.prioirty') %> </td>
+      <td> <%= sort_link(@q, sorting_i18n(:start_time)) %> 
+           <%#= t('views.todotasks.start_time') %> </td>
+      <td> <%= sort_link(@q, sorting_i18n(:end_time)) %> 
+           <%#= t('views.todotasks.end_time') %> </td>
+      <td> <%= sort_link(@q, sorting_i18n(:status)) %>
+           <%#= t('views.todotasks.status') %> </td>
+      <td> <%= sort_link(@q, sorting_i18n(:prioirty)) %>
+           <%#= t('views.todotasks.prioirty') %> </td>
     </tr>
   </thead>
   <tbody>

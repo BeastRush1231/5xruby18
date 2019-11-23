@@ -30,4 +30,9 @@ module TodotasksHelper
       [t('views.status_schedule.solved'), 3]
     ]
   end
+
+  def sorting_i18n(sorting)
+    s = sorting.to_s;
+    t("views.todotasks.#{s}")
+  end
 end

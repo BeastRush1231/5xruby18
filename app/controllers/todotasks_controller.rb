@@ -1,6 +1,6 @@
 class TodotasksController < ApplicationController
   before_action :find_todotask, only: [:edit, :update, :destroy]
-  before_action :find_todotask_ransack, only: [:index, :new, :edit]
+  before_action :find_todotask_ransack, only: [:index]
 
   def index
     # @todotask = Todotask.order_by_end_time
