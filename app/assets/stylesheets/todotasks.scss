@@ -1,0 +1,88 @@
+// Place all the styles related to the tasksystem controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+*{
+  // border: 1px solid #000;
+}
+.wrap{
+  border-top: 3px solid #78c5f7;
+  background-color: #fff;
+}
+.banner_bg{
+  background-color: #fff;
+}
+.banner{
+  max-width: 1200px;
+  padding: 10px 0;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.todotask_list_bg{
+  background-color: #eee;
+}
+.todotask_list_title{
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+}
+.todotask_list{
+  max-width: 1200px;
+  margin: auto;
+  padding: 15px;
+  justify-content: space-between;
+}
+
+.table{
+  max-width: 1000px;
+  margin: auto;
+}
+.table table{
+  width: 100%;
+  border: 3px double #666;
+  background-color: #fff;
+  border-radius: 10px;
+}
+.table thead{
+  background-color: #333;
+  color: #fff;
+}
+.table tbody tr:nth-child(2n){
+  background-color: #ccc;
+}
+.table td{
+  border: 1px solid #666;
+}
+.table td .feature{
+  color: #000;
+  border: 1px solid #000;
+  padding: 5px;
+}
+.table tbody tr:nth-child(2n) .feature_edit:hover{
+  color: #000;
+  background-color: #78c5f7;
+}
+.table tbody tr:nth-child(2n-1) .feature_edit:hover{
+  color: #fff;
+  background-color: #78c5f7;
+}
+.table tbody tr:nth-child(2n) .feature_delete:hover,.table tbody tr:nth-child(2n-1) .feature_delete:hover{
+  color: #fff;
+  background-color: rgb(241, 63, 63);
+}
+.table td a{
+  color: #fff;
+}
+
+.footer_bg{
+  background-color: #78c5f7;
+  padding: 3px;
+}
+.footer{
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}

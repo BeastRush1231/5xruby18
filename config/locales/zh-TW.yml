@@ -16,6 +16,7 @@ zh-TW:
       edit: "編輯"
       status: "狀態"
       prioirty: "優先順序"
+      feature: "功能"
       # show: "查看"
       delete: "刪除"
       delete_msg: "你確定要刪除任務？"

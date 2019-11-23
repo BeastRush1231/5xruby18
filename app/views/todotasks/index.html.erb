@@ -1,52 +1,75 @@
-<h1> <%= t('views.todotasks_topic') %> </h1>
+<div class="wrap">
+  <div class="banner_bg">
+    <div class="banner">
+      <div class="logo">
+        <%= link_to t('views.home'), root_path %>
+      </div>
+      <div class="login">
+        <%= link_to "中文版", :controller => controller_name, :action => action_name, :locale => "zh-TW" %>
+        <%= link_to "English", :controller => controller_name, :action => action_name, :locale => "en" %>
 
-<%= link_to t('views.home'), root_path %>
-<%= link_to t('views.new_todotask'), new_todotask_path %>
+        <%= search_form_for @q do |f| %>
+          <%= f.label :name, t('views.search_name') %>
+          <%= f.search_field :name_cont %>
 
-<%= search_form_for @q do |f| %>
-  <%= f.label :name, t('views.search_name') %>
-  <%= f.search_field :name_cont %>
+          <%= f.label :status, t('views.search_status') %>
+          <%= f.select :status_eq, enum_status %>
+          
+          <%= f.submit %>
+        <% end %>
+      </div>
+    </div>
+  </div>
 
-  <%= f.label :status, t('views.search_status') %>
-  <%= f.select :status_eq, enum_status %>
-  
-  <%= f.submit %>
-<% end %>
+  <div class="todotask_list_bg">
+    <div class="todotask_list_title">
+      <h3> <%= t('views.todotasks_topic') %> </h3>
+      <%= link_to t('views.new_todotask'), new_todotask_path %>
+    </div>
+  </div>
 
-<table>
-  <thead>
-    <tr>
-      <td> <%= t('views.todotasks.title') %> </td>
-      <td> <%= t('views.todotasks.content') %> </td>
-      <td> <%= sort_link(@q, :start_time) %> 
-           <%#= t('views.todotasks.start_time') %> </td>
-      <td> <%= sort_link(@q, :end_time) %> 
-           <%#= t('views.todotasks.end_time') %> </td>
-      <td> <%= sort_link(@q, :status) %>
-           <%#= t('views.todotasks.status') %> </td>
-      <td> <%= sort_link(@q, :prioirty) %>
-           <%#= t('views.todotasks.prioirty') %> </td>
-    </tr>
-  </thead>
-  <tbody>
-    <% @todotask.each do |t| %>
-    <tr>
-      <td> <%= t.name %> </td>
-      <td> <%= t.content %> </td>
-      <td> <%= (t.start_time)&.strftime('%F %R') %> </td>
-      <td> <%= (t.end_time)&.strftime('%F %R') %> </td>
-      <td> <%= todotask_status(t.status) %> </td>
-      <td> <%= todotask_prioirty(t.prioirty) %></td>
-      <td>
-        <%= link_to t('views.todotasks.edit'), edit_todotask_path(t) %>
-        <%= link_to t('views.todotasks.delete'), todotask_path(t), method: 'delete', data: {confirm: t('views.todotasks.delete_msg') } %>
-      </td>
-    </tr>
-    <% end %>
-  </tbody>
-</table>
+  <div class="todotask_list">
+    <div class="table">
+      <table>
+        <thead>
+          <tr>
+            <td> <%= t('views.todotasks.title') %> </td>
+            <td> <%= t('views.todotasks.content') %> </td>
+            <td> <%= sort_link(@q, :start_time) %> 
+                <%#= t('views.todotasks.start_time') %> </td>
+            <td> <%= sort_link(@q, :end_time) %> 
+                <%#= t('views.todotasks.end_time') %> </td>
+            <td> <%= sort_link(@q, :status) %>
+                <%#= t('views.todotasks.status') %> </td>
+            <td> <%= sort_link(@q, :prioirty) %>
+                <%#= t('views.todotasks.prioirty') %> </td>
+            <td> <%= t('views.todotasks.feature') %> </td>
+          </tr>
+        </thead>
+        <tbody>
+          <% @todotask.each do |t| %>
+          <tr>
+            <td> <%= t.name %> </td>
+            <td> <%= t.content %> </td>
+            <td> <%= (t.start_time)&.strftime('%F %R') %> </td>
+            <td> <%= (t.end_time)&.strftime('%F %R') %> </td>
+            <td> <%= todotask_status(t.status) %> </td>
+            <td> <%= todotask_prioirty(t.prioirty) %></td>
+            <td>
+              <%= link_to t('views.todotasks.edit'), edit_todotask_path(t), class:"feature feature_edit" %>
+              <%= link_to t('views.todotasks.delete'), todotask_path(t),  class:"feature feature_delete", method: 'delete', data: {confirm: t('views.todotasks.delete_msg') } %>
+            </td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+      <%= paginate @todotask %>
+    </div>
+  </div>
 
-<%= paginate @todotask %>
-
-<%= link_to "中文版", :controller => controller_name, :action => action_name, :locale => "zh-TW" %>
-<%= link_to "English", :controller => controller_name, :action => action_name, :locale => "en" %>
+  <div class="footer_bg">
+    <div class="footer">
+      <span>Copyright &copy; 2019 Chester | Tang INc.</span>
+    </div>
+  </div>
+</div>

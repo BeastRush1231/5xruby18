@@ -16,6 +16,7 @@ en:
       end_time: "TaskEndtime"
       status: "Status"
       prioirty: "Prioirty"
+      feature: "Feature"
       # show: "Show"
       delete: "Delete"
       delete_msg: "Are you sure delete this todotask？"
