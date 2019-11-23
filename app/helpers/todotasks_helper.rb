@@ -31,8 +31,4 @@ module TodotasksHelper
     ]
   end
 
-  def sorting_i18n(sorting)
-    s = sorting.to_s;
-    t("views.todotasks.#{s}")
-  end
 end
