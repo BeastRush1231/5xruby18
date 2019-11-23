@@ -5,7 +5,7 @@ class TodotasksController < ApplicationController
   def index
     # @todotask = Todotask.order_by_end_time
     # @todotask = Todotask.order(end_time: :asc)
-    @todotask = @q.result.order_by_end_time
+    @todotask = @q.result.order_by_end_time.page(params[:page]).per(10)
   end
 
   def new
