@@ -10,6 +10,7 @@ zh-TW:
     search_status: "狀態"
     todotasks:
       title: "標題"
+      placeholder: "搜尋 任務"
       content: "內容"
       start_time: "任務開始時間"
       end_time: "任務結束時間"

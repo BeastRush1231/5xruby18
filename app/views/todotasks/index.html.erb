@@ -5,17 +5,23 @@
         <%= link_to t('views.home'), root_path %>
       </div>
       <div class="login">
-        <%= link_to "中文版", :controller => controller_name, :action => action_name, :locale => "zh-TW" %>
-        <%= link_to "English", :controller => controller_name, :action => action_name, :locale => "en" %>
+        <div class="i18n">
+          <div class="i18n_tw">
+            <%= link_to "中文", :controller => controller_name, :action => action_name, :locale => "zh-TW" %>
+          </div>
+          <div class="i18n_en">
+            <%= link_to "English", :controller => controller_name, :action => action_name, :locale => "en" %>
+          </div>
+        </div>
 
         <%= search_form_for @q do |f| %>
-          <%= f.label :name, t('views.search_name') %>
-          <%= f.search_field :name_cont %>
+          <%= f.label :name, t('views.search_name'), class: "search_name", for: "search_name" %>
+          <%= f.search_field :name_cont, class: "search_name_field", placeholder: t('views.todotasks.placeholder'), id: "search_name" %>
 
-          <%= f.label :status, t('views.search_status') %>
-          <%= f.select :status_eq, enum_status %>
+          <%= f.label :status, t('views.search_status'), class: "search_status" %>
+          <%= f.select :status_eq, enum_status, {}, {:class => "search_status_select"} %>
           
-          <%= f.submit %>
+          <%= f.submit class:"search_submit" %>
         <% end %>
       </div>
     </div>
@@ -23,8 +29,8 @@
 
   <div class="todotask_list_bg">
     <div class="todotask_list_title">
-      <h3> <%= t('views.todotasks_topic') %> </h3>
-      <%= link_to t('views.new_todotask'), new_todotask_path %>
+      <h3 class="list_title_h3"> <%= t('views.todotasks_topic') %> </h3>
+      <%= link_to t('views.new_todotask'), new_todotask_path, class:"list_title_a" %>
     </div>
   </div>
 

@@ -10,6 +10,7 @@ en:
     search_status: "Status"
     todotasks:
       title: "Title"
+      placeholder: "Search Task"
       content: "Content"
       edit: "Edit"
       start_time: "TaskStarttime"
