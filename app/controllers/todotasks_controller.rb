@@ -1,9 +1,11 @@
 class TodotasksController < ApplicationController
   before_action :find_todotask, only: [:edit, :update, :destroy]
+  before_action :find_todotask_ransack, only: [:index, :new, :edit]
 
   def index
-    @todotask = Todotask.order_by_end_time
+    # @todotask = Todotask.order_by_end_time
     # @todotask = Todotask.order(end_time: :asc)
+    @todotask = @q.result.order_by_end_time
   end
 
   def new
@@ -37,11 +39,15 @@ class TodotasksController < ApplicationController
 
   private
 
+  def find_todotask_ransack
+    @q = Todotask.ransack(params[:q])  
+  end
+
   def find_todotask
     @todotask = Todotask.find(params[:id])
   end
   
   def todotask_params
-    params.require(:todotask).permit(:name, :content, :start_time, :end_time)
+    params.require(:todotask).permit(:name, :content, :start_time, :end_time, :status)
   end
 end

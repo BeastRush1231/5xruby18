@@ -8,12 +8,16 @@
   </ul>
 <% end %>
 
-<%= form_for(@todotask) do |t| %>
+<%= form_for @todotask do |t| %>
   <%= t.label :name, t('views.todotasks.title') %>
   <%= t.text_field :name, placeholder: t('todotasks.validate.placeholder') %> <br/>
 
   <%= t.label :content, t('views.todotasks.content') %>
   <%= t.text_area :content, placeholder: t('todotasks.validate.placeholder') %>
+  <br/>
+
+  <%= t.label :status, t('views.todotasks.status') %>
+  <%= t.select :status, options_for_select([['upcoming', 'upcoming'], ['processing', 'processing'], ['solved', 'solved']]) %>
   <br/>
 
   <%= t.label :start_time, t('views.todotasks.starttime') %>
