@@ -5,6 +5,7 @@ class Todotask < ApplicationRecord
   scope :order_by_end_time, -> { order(end_time: :asc) }
 
   enum status: { upcoming: 1, processing: 2, solved: 3 }
+  enum prioirty: { low: 1, basic: 2, high: 3 }
 
   include AASM
 

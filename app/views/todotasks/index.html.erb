@@ -8,10 +8,8 @@
   <%= f.search_field :name_cont %>
 
   <%= f.label :status, t('views.search_status') %>
-  <%= f.select :status_eq,
-      Todotask.statuses.map { |status| [status[0], status[1]] } 
-  %>
-
+  <%= f.select :status_eq, enum_status %>
+  
   <%= f.submit %>
 <% end %>
 
@@ -20,9 +18,14 @@
     <tr>
       <td> <%= t('views.todotasks.title') %> </td>
       <td> <%= t('views.todotasks.content') %> </td>
-      <td> <%= t('views.todotasks.starttime') %> </td>
-      <td> <%= t('views.todotasks.endtime') %> </td>
-      <td> <%= t('views.todotasks.status') %> </td>
+      <td> <%= sort_link(@q, :start_time) %> 
+           <%#= t('views.todotasks.start_time') %> </td>
+      <td> <%= sort_link(@q, :end_time) %> 
+           <%#= t('views.todotasks.end_time') %> </td>
+      <td> <%= sort_link(@q, :status) %>
+           <%#= t('views.todotasks.status') %> </td>
+      <td> <%= sort_link(@q, :prioirty) %>
+           <%#= t('views.todotasks.prioirty') %> </td>
     </tr>
   </thead>
   <tbody>
@@ -32,7 +35,8 @@
       <td> <%= t.content %> </td>
       <td> <%= (t.start_time)&.strftime('%F %R') %> </td>
       <td> <%= (t.end_time)&.strftime('%F %R') %> </td>
-      <td> <%= t.status %> </td>
+      <td> <%= todotask_status(t.status) %> </td>
+      <td> <%= todotask_prioirty(t.prioirty) %></td>
       <td>
         <%= link_to t('views.todotasks.edit'), edit_todotask_path(t) %>
         <%= link_to t('views.todotasks.delete'), todotask_path(t), method: 'delete', data: {confirm: t('views.todotasks.delete_msg') } %>

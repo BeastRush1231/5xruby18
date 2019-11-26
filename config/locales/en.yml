@@ -12,12 +12,21 @@ en:
       title: "Title"
       content: "Content"
       edit: "Edit"
-      starttime: "TaskStarttime"
-      endtime: "TaskEndtime"
-      status: "status"
+      start_time: "TaskStarttime"
+      end_time: "TaskEndtime"
+      status: "Status"
+      prioirty: "Prioirty"
       # show: "Show"
       delete: "Delete"
       delete_msg: "Are you sure delete this todotask？"
+    status_schedule: 
+      upcoming: "upcoming"
+      processing: "processing"
+      solved: "solved"
+    priority_lv: 
+      low: "low"
+      basic: "basic"
+      high: "high"
   todotasks:
     create:
       notice: "Create a new todotask！"

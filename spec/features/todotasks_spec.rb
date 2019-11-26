@@ -51,21 +51,32 @@ RSpec.feature "Todotasks", type: :feature do
     end
   end
 
-  let(:todotask1) { FactoryBot.create(:todotask, end_time: Time.now.yesterday) }
-  let(:todotask2) { FactoryBot.create(:todotask, end_time: Time.now) }
+  let(:todotask1) { FactoryBot.create(:todotask, end_time: Time.now.yesterday, prioirty: 1) }
+  let(:todotask2) { FactoryBot.create(:todotask, end_time: Time.now, prioirty: 3) }
 
   scenario "建立2個任務後 更改狀態" do
     todotask1
     todotask2
 
     visit edit_todotask_url(todotask1.id)
-    select 'processing', from: 'todotask_status'
+    select '進行中', from: 'todotask_status'
     click_on "送出"
     visit todotasks_path
 
     expect(todotask1.reload.status).to eq "processing"
     expect(todotask2.status).to eq "upcoming"
-    expect(find('table tbody tr:nth-child(1) td:nth-child(5)')).to have_content("processing")
-    expect(find('table tbody tr:nth-child(2) td:nth-child(5)')).to have_content("upcoming")
+    expect(find('table tbody tr:nth-child(1) td:nth-child(5)')).to have_content("進行中")
+    expect(find('table tbody tr:nth-child(2) td:nth-child(5)')).to have_content("待處理")
+  end
+
+  scenario "建立2個任務後 點擊優先順序 會由低到高" do
+    todotask1
+    todotask2
+
+    visit todotasks_path
+    click_on "Prioirty"
+
+    expect(find('table tbody tr:nth-child(1) td:nth-child(6)')).to have_content("低")
+    expect(find('table tbody tr:nth-child(2) td:nth-child(6)')).to have_content("高")
   end
 end
