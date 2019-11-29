@@ -45,6 +45,8 @@ gem 'ransack', '~> 2.3'
 gem 'hirb-unicode', '~> 0.0.5'
 gem 'kaminari', '~> 1.1', '>= 1.1.1'
 gem 'database_cleaner', '~> 1.7'
+gem 'bootstrap', '~> 4.3', '>= 4.3.1'
+gem 'jquery-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -52,16 +54,6 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.9'
   gem 'travis', '~> 1.8', '>= 1.8.10'
   gem 'rails-i18n', '~> 5.1'
-  gem 'factory_bot_rails', '~> 5.1', '>= 5.1.1'
-  gem 'faker', '~> 2.7'
-  gem 'shoulda-matchers', '~> 4.1', '>= 4.1.2'
-  gem 'figaro', '~> 1.1', '>= 1.1.1'
-  gem 'aasm', '~> 5.0', '>= 5.0.6'
-  gem 'ransack', '~> 2.3'
-  gem 'hirb-unicode', '~> 0.0.5'
-  gem 'kaminari', '~> 1.1', '>= 1.1.1'
-  gem 'bootstrap', '~> 4.3', '>= 4.3.1'
-  gem 'jquery-rails'
 end
 
 group :development do
