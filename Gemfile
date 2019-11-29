@@ -51,6 +51,7 @@ group :development, :test do
   gem 'ransack', '~> 2.3'
   gem 'hirb-unicode', '~> 0.0.5'
   gem 'kaminari', '~> 1.1', '>= 1.1.1'
+  gem 'database_cleaner', '~> 1.7'
 end
 
 group :development do
